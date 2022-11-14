@@ -1,4 +1,4 @@
-class Date
+class date
 {
 private:
     int m_year;
@@ -6,7 +6,7 @@ private:
     int m_day;
 
 public:
-    Date(int year, int month, int day)
+    date(int year, int month, int day)
     {
         setDate(year, month, day);
     }

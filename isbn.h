@@ -13,10 +13,10 @@ private:
 public:
     isbn(int primo, int secondo, int terzo, char carattere)
     {
-        setisbn(primo, secondo, terzo, carattere);
+        setIsbn(primo, secondo, terzo, carattere);
     }
 
-    void setisbn(int primo, int secondo, int terzo, char carattere)
+    void setIsbn(int primo, int secondo, int terzo, char carattere)
     {
         
         checkTerzetto(primo,secondo,terzo);

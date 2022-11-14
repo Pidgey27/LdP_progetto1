@@ -2,23 +2,26 @@
 #include "isbn.h"
 using namespace std;
 
-
-class Book
+class book
 {
 private:
-    string titolo;
-    string nome_Autore;
-    string cognome_Autore;
-    bool stato;
-    Date data_Copyright;
-    isbn codice_isbn;
+    string m_titolo;
+    string m_nome_Autore;
+    string m_cognome_Autore;
+    bool m_stato;
+    date m_data_Copyright;
+    isbn m_codice_Isbn;
 
 public:
-    Book(/* args */);
-    ~Book();
-    string Titolo(){return titolo;}
+    book();
+    ~book();
+    string Titolo(){return m_titolo;}
 };
+book::book(string nome_autore, string cognome_Autore, string titolo, isbn isbn)
+            : m_nome_Autore(nome_autore), m_cognome_Autore(cognome_Autore), m_titolo(titolo), m_codice_Isbn(isbn)
+{}
 
-Book::~Book()
+book::~book()
 {
 }
+
