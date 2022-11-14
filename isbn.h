@@ -1,7 +1,5 @@
 #include <string>
 
-using namespace std;
-
 class isbn
 {
 private:
@@ -12,23 +10,16 @@ private:
 
 public:
     isbn(int primo, int secondo, int terzo, char carattere)
-    {
-        setIsbn(primo, secondo, terzo, carattere);
-    }
-
+        :n1(primo), n2(secondo), n3(terzo), x(carattere)
+    {}
+    /*
     void setIsbn(int primo, int secondo, int terzo, char carattere)
     {
-        
-        checkTerzetto(primo,secondo,terzo);
-
+        n1 = primo;
+        n2 = secondo;
+        n3 = terzo;    
         x = carattere; 
     }
 
-    string getIsbn() { return to_string(n1) + " - " + to_string(n2) + " - " + to_string(n3) + " - " + x ; }
-    bool checkTerzetto(int primo, int secondo, int terzo){
-        n1= primo;
-        n2 = secondo;
-        n3 = terzo;
-    }
-
+    std::string getIsbn() { return std::to_string(n1) + " - " + std::to_string(n2) + " - " + std::to_string(n3) + " - " + x ; }*/
 };
