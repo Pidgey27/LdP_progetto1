@@ -1,7 +1,8 @@
 #include "date.h"
 #include <string>
 #include <vector>
-class book
+#include <iostream>
+class Book
 {
 private:
     std::string m_titolo;
@@ -12,7 +13,7 @@ private:
     std::string m_codice_Isbn;
 
 public:
-    book(std::string nome_autore, std::string cognome_Autore, std::string titolo, std::string isbn)
+    Book(std::string nome_autore, std::string cognome_Autore, std::string titolo, std::string isbn)
         : m_nome_Autore(nome_autore), m_cognome_Autore(cognome_Autore), m_titolo(titolo)
     {
         if(!check_ISBN(isbn))
@@ -22,6 +23,8 @@ public:
     std::string getTitolo(){return m_titolo;}
     std::string getNomeAutore(){return m_nome_Autore;}
     std::string getCognomeAutore(){return m_cognome_Autore;}
+    std::string getISBN() {return m_codice_Isbn;}
+    date getData() { return m_data_Copyright; }
     bool check_ISBN(std::string isbn) {
         std::string delimiter="-";
         std::vector<std::string> words;
@@ -39,3 +42,21 @@ public:
         return true;
     }
 };
+bool operator == (Book a, Book b) {
+    if ((a.getISBN().compare(b.getISBN())) == 0)
+        return true;
+    else
+        return false;
+}
+bool operator != (Book a, Book b) {
+    if ((a.getISBN().compare(b.getISBN())) == 0)
+        return false;
+    else
+        return true;
+}
+std::ostream& operator << (std::ostream& os, Book book) {
+    return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getData();
+}
+
+
+
