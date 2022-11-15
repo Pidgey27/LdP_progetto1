@@ -1,5 +1,6 @@
 #include "date.h"
 #include <string>
+#include <vector>
 class book
 {
 private:
@@ -17,20 +18,24 @@ public:
         if(!check_ISBN(isbn))
             throw std::runtime_error ("Invalid ISBN code");
     }
-    ~book();
+    //~book();
     std::string getTitolo(){return m_titolo;}
     std::string getNomeAutore(){return m_nome_Autore;}
     std::string getCognomeAutore(){return m_cognome_Autore;}
     bool check_ISBN(std::string isbn) {
-        const std::string num_check = isbn.substr(0, isbn.length() - 1);
-        int n_delimiters = 0;
-        for (char const &ch: num_check) {
-            if (!(std::isdigit(ch) && (ch != '-')))
-                return false;
-            if (ch == '-')
-                n_delimiters++;
+        std::string delimiter="-";
+        std::vector<std::string> words;
+        int pos;
+        while ((pos=isbn.find(delimiter))!=std::string::npos){
+            words.push_back(isbn.substr(0, pos));
+            isbn.erase(0, pos+1);
         }
-        if (n_delimiters != 3)
+        words.push_back(isbn);
+        if(words.size()!=4)
             return false;
+        for(int i=0; i<3; i++)
+            if(words[i].find_first_not_of("0123456789")!=std::string::npos)
+                return false;
+        return true;
     }
 };

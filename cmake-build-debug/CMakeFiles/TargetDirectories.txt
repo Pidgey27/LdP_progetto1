@@ -1,0 +1,3 @@
+C:/Users/Aless/Documents/GitHub/LdP_progetto1/cmake-build-debug/CMakeFiles/LdP_progetto1.dir
+C:/Users/Aless/Documents/GitHub/LdP_progetto1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Aless/Documents/GitHub/LdP_progetto1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
