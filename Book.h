@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+
 class Book
 {
 private:
@@ -19,12 +20,12 @@ public:
         if(!check_ISBN(isbn))
             throw std::runtime_error ("Invalid ISBN code");
     }
-    //~book();
+    //~Book();
     std::string getTitolo(){return m_titolo;}
     std::string getNomeAutore(){return m_nome_Autore;}
     std::string getCognomeAutore(){return m_cognome_Autore;}
     std::string getISBN() {return m_codice_Isbn;}
-    date getData() { return m_data_Copyright; }
+    std::string getData() { return m_data_Copyright.getDate(); }
     bool check_ISBN(std::string isbn) {
         std::string delimiter="-";
         std::vector<std::string> words;
@@ -45,18 +46,13 @@ public:
 bool operator == (Book a, Book b) {
     if ((a.getISBN().compare(b.getISBN())) == 0)
         return true;
-    else
-        return false;
+    return false;
 }
 bool operator != (Book a, Book b) {
     if ((a.getISBN().compare(b.getISBN())) == 0)
         return false;
-    else
-        return true;
+    return true;
 }
 std::ostream& operator << (std::ostream& os, Book book) {
     return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getData();
 }
-
-
-

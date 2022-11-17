@@ -24,9 +24,8 @@ public:
         throw std::runtime_error("Date input is invalid");
     }
 
-    int getYear() { return m_year; }
-    int getMonth() { return m_month; }
-    int getDay()  { return m_day; }
+    std::string getDate() { return to_string(m_day)+ "/"+ to_string(m_month)+ "/"+ to_string(m_year);}
+
     bool checkDate(int year, int month, int day) {
         if(month < 1 || month > 12)
             return false;
