@@ -8,4 +8,6 @@ include_directories(.)
 add_executable(LdP_progetto1
         Book.h
         Date.h
+        Book.cpp
+        Date.cpp
         main.cpp)

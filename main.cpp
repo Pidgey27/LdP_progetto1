@@ -1,4 +1,5 @@
 #include "Book.h"
+#include "Date.h"
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -7,8 +8,8 @@ int main(int argc, char const *argv[])
     Book booktest = Book();
     
     std::vector<Book> shelf(10);
-    cout << my_favourite_book.getData();
-    cout << my_favourite_book;
+    cout << my_favourite_book.getData()<<endl;
+    cout << my_favourite_book<<endl;
     bool test = booktest != my_favourite_book ;
     cout << test;
     return 0;
