@@ -8,7 +8,6 @@
 #define DEFAULT_TITOLO              ""
 #define DEFAULT_ISBN                "000-000-000-0"
 
-
 class Book
 {
 private:

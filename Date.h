@@ -5,9 +5,9 @@
 #define DATE_H
 
 //-----------------Configuration-------------------------------
-#define DEFAULT_YEAR                -100
-#define DEFAULT_MONTH               6
-#define DEFAULT_DAY                 12
+#define DEFAULT_YEAR                0
+#define DEFAULT_MONTH               1
+#define DEFAULT_DAY                 1
 
 
 class Date
