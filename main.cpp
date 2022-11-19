@@ -2,17 +2,9 @@
 #include "Date.h"
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    Book my_favourite_book = Book("john", "Foster Wallace","Una cosa divertente che non farò mai piu'","887-521-837-4",1990,4,2);
-    Book booktest = Book();
-    
+    Book my_favourite_book = Book("john", "Foster Wallace","Una cosa divertente che non farò mai piu'","887-521-837-4");
     std::vector<Book> shelf(10);
-    cout << my_favourite_book.getData()<<endl;
-    cout << my_favourite_book<<endl;
-    bool test = booktest != my_favourite_book ;
-    cout << test;
     return 0;
 }
-
-    

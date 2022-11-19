@@ -1,11 +1,10 @@
 #include "Date.h"
 
-    Date::Date(int year, int month, int day)
-    {
+    Date::Date(int year, int month, int day){
         Date::setDate(year, month, day);
     }
-    void Date::setDate(int year, int month, int day)
-    {
+
+    void Date::setDate(int year, int month, int day){
         if(checkDate(year, month, day)){
             m_year = year;
             m_month = month;
@@ -14,7 +13,9 @@
         }
         throw std::runtime_error("Date input is invalid");
     }
-    std::string Date::getDate() { return std::to_string(m_day)+ "/"+ std::to_string(m_month)+ "/"+ std::to_string(m_year);}
+    std::string Date::getDate() { 
+        return std::to_string(m_day)+ "/"+ std::to_string(m_month)+ "/"+ std::to_string(m_year);
+    }
     bool Date::checkDate(int year, int month, int day) {
         if(month < 1 || month > 12)
             return false;

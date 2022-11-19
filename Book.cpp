@@ -5,6 +5,7 @@
     {
         if(!check_ISBN(isbn))
             throw std::runtime_error ("Invalid ISBN code");
+        m_codice_Isbn = isbn;
         m_data_Copyright = Date(yearOfPublication, monthOfPublication, dayOfPublication);
     }
     //~Book(); //ToDo distruttore se vogliamo
@@ -13,13 +14,23 @@
     std::string Book::getNomeAutore(){return m_nome_Autore;}
     std::string Book::getCognomeAutore(){return m_cognome_Autore;}
     std::string Book::getISBN() {return m_codice_Isbn;}
-    std::string Book::getData() { 
+    std::string Book::getDate() { 
         std::string data  = m_data_Copyright.getDate();
-        if((data.compare("0/0/0")) == 0)
-             throw std::runtime_error ("Date not avaiable");
+        if((data.compare(std::to_string(DEFAULT_DAY)+"/"+std::to_string(DEFAULT_MONTH)+"/"+std::to_string(DEFAULT_YEAR))) == 0)
+             throw std::runtime_error ("Date not avaiable for this book");
         return data;
     }
+    
+    void Book::setTitolo(std::string titolo){this->m_titolo = titolo;}
+    void Book::setNomeAutore(std::string nomeAutore){this->m_nome_Autore = nomeAutore;}
+    void Book::setCognomeAutore(std::string cognomeAutore){this->m_cognome_Autore = cognomeAutore;}
+    void Book::setISBN(std::string isbn){
+        if(!check_ISBN(isbn))
+            throw std::runtime_error ("Invalid ISBN code");
+        this->m_codice_Isbn = isbn;
+    }
     void Book::setDate(int year, int month, int day) { m_data_Copyright.setDate(year, month, day);}
+    
     bool Book::check_ISBN(std::string isbn) {
         std::string delimiter="-";
         std::vector<std::string> words;
@@ -37,7 +48,6 @@
         return true;
     }
 
-
     bool operator == (Book a, Book b) {
         if ((a.getISBN().compare(b.getISBN())) == 0)
             return true;
@@ -49,5 +59,5 @@
         return true;
     }
     std::ostream& operator << (std::ostream& os, Book book) {
-        return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getData();
+        return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getDate();
     }

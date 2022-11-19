@@ -2,8 +2,12 @@
 #include <vector>
 #include "Date.h"
 
-#define DEFAULT_STRING  ""
-#define DEFAULT_ISBN "000-000-000-0"
+//-----------------Configuration-------------------------------
+#define DEFAULT_NOME_AUTORE         ""
+#define DEFAULT_COGNOME_AUTORE      ""
+#define DEFAULT_TITOLO              ""
+#define DEFAULT_ISBN                "000-000-000-0"
+
 
 class Book
 {
@@ -19,13 +23,21 @@ private:
 
 public:
     
-    Book(std::string nome_autore = DEFAULT_STRING, std::string cognome_Autore = DEFAULT_STRING, std::string titolo = DEFAULT_STRING, std::string isbn = DEFAULT_ISBN, int yearOfPublication = 1, int monthOfPublication = 1 , int dayOfPublication = 1, bool default_stato = 1);
+    //Constructor
+    Book(std::string nome_autore = DEFAULT_NOME_AUTORE, std::string cognome_Autore = DEFAULT_COGNOME_AUTORE, std::string titolo = DEFAULT_TITOLO, 
+        std::string isbn = DEFAULT_ISBN, int yearOfPublication = DEFAULT_YEAR, int monthOfPublication = DEFAULT_MONTH , int dayOfPublication = DEFAULT_DAY,
+        bool default_stato = 1);
 
     std::string getTitolo();
     std::string getNomeAutore();
     std::string getCognomeAutore();
     std::string getISBN();
-    std::string getData();
+    std::string getDate();
+
+    void setTitolo(std::string titolo);
+    void setNomeAutore(std::string nomeAutore);
+    void setCognomeAutore(std::string cognomeAutore);
+    void setISBN(std::string isbn);
     void setDate(int year, int month, int day);
     
 };

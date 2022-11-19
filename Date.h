@@ -1,7 +1,15 @@
 #include <stdexcept>
 #include <string>
+
 #ifndef DATE_H
 #define DATE_H
+
+//-----------------Configuration-------------------------------
+#define DEFAULT_YEAR                -100
+#define DEFAULT_MONTH               6
+#define DEFAULT_DAY                 12
+
+
 class Date
 {
 private:
@@ -10,7 +18,9 @@ private:
     int m_day;
 
 public:
-    Date(int year = 1, int month = 1, int day = 1);
+    //Constructor
+    Date(int year = DEFAULT_YEAR, int month = DEFAULT_MONTH, int day = DEFAULT_DAY);
+    
     void setDate(int year, int month, int day);
     std::string getDate();
     bool checkDate(int year, int month, int day);
