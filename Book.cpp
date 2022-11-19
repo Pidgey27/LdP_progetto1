@@ -1,17 +1,11 @@
 #include "Book.h"
 
-    Book::Book(std::string nome_autore, std::string cognome_Autore, std::string titolo, std::string isbn)
+    Book::Book(std::string nome_autore, std::string cognome_Autore, std::string titolo, std::string isbn, int yearOfPublication, int monthOfPublication, int dayOfPublication, bool default_stato)
         : m_nome_Autore(nome_autore), m_cognome_Autore(cognome_Autore), m_titolo(titolo), m_codice_Isbn(isbn)
     {
         if(!check_ISBN(isbn))
             throw std::runtime_error ("Invalid ISBN code");
-    }
-    Book::Book(std::string nome_autore, std::string cognome_Autore, std::string titolo, std::string isbn, int yearOfPublication, int monthOfPublication, int dayOfPublication)
-        : m_nome_Autore(nome_autore), m_cognome_Autore(cognome_Autore), m_titolo(titolo), m_codice_Isbn(isbn)
-    {
-        if(!check_ISBN(isbn))
-            throw std::runtime_error ("Invalid ISBN code");
-        m_data_Copyright.setDate(yearOfPublication, monthOfPublication, dayOfPublication);
+        m_data_Copyright = Date(yearOfPublication, monthOfPublication, dayOfPublication);
     }
     //~Book(); //ToDo distruttore se vogliamo
 

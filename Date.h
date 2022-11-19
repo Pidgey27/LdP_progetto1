@@ -10,7 +10,7 @@ private:
     int m_day;
 
 public:
-    Date(int year, int month, int day);
+    Date(int year = 1, int month = 1, int day = 1);
     void setDate(int year, int month, int day);
     std::string getDate();
     bool checkDate(int year, int month, int day);
