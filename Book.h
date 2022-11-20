@@ -32,12 +32,15 @@ public:
     std::string getCognomeAutore();
     std::string getISBN();
     std::string getDate();
+    bool getStato();
+    
 
     void setTitolo(std::string titolo);
     void setNomeAutore(std::string nomeAutore);
     void setCognomeAutore(std::string cognomeAutore);
     void setISBN(std::string isbn);
     void setDate(int year, int month, int day);
+    void setStato(bool occupato);
     
 };
 std::ostream& operator << (std::ostream& os, Book book);

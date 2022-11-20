@@ -61,3 +61,8 @@
     std::ostream& operator << (std::ostream& os, Book book) {
         return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getDate() << "\n";
     }
+
+    bool Book::getStato(){ return m_stato; }
+    void Book::setStato(bool occupato){
+        m_stato = occupato;
+    }
