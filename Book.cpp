@@ -17,7 +17,7 @@
     std::string Book::getDate() { 
         std::string data  = m_data_Copyright.getDate();
         if((data.compare(std::to_string(DEFAULT_DAY)+"/"+std::to_string(DEFAULT_MONTH)+"/"+std::to_string(DEFAULT_YEAR))) == 0)
-             throw std::runtime_error ("Date not avaiable for this book");
+            return "Copyright date not avaiable for this book \n" ;
         return data;
     }
     
@@ -59,5 +59,5 @@
         return true;
     }
     std::ostream& operator << (std::ostream& os, Book book) {
-        return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getDate();
+        return os << book.getTitolo() << std::endl << book.getNomeAutore() + " " + book.getCognomeAutore() << std::endl << book.getISBN() << std::endl << book.getDate() << "\n";
     }
